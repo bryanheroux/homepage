@@ -5,6 +5,20 @@ $headerHeight: 104px !default;
 $bodyFontStack: Georgia, seif;
 $headFontStack: DINAlternate-Bold, --apple-system, system, 'Roboto', 'Helvetica', sans-serif;
 
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
 html, body {
   font-family: $bodyFontStack;
   margin: 0;
@@ -12,6 +26,19 @@ html, body {
   font-size: 1.05em;
   color: rgba(0,0,0,.54);
   line-height: 1.4;
+}
+
+h1,h2,h3 {
+  font-family: $headFontStack;
+  color: rgba(0,0,0,0.87);
+  text-align: middle;
+  svg {
+    vertical-align: middle;
+  }
+}
+
+section {
+  margin-bottom: 40px;
 }
 
 .width-container {
@@ -66,15 +93,14 @@ html, body {
   background-position: top center;
   margin-top: $headerHeight;
 }
+
 // HERO IMAGE
 .hero {
 
   h1 {
     padding-top: 250px;
-    font-family: $headFontStack;
     font-size: 41px;
     line-height: 1;
-    color: rgba(0,0,0,0.87);
     letter-spacing: 0;
     text-shadow: 0 1px 1px rgba(255,255,255,.4);
     margin-bottom: 15px;
@@ -97,5 +123,40 @@ html, body {
       margin-top: -10px;
     }
   }
+
+}
+
+// Services
+.services {
+  img {
+    vertical-align: middle;
+  }
+}
+
+.services--grid {
+  display: flex;
+
+  .services--custom-home {
+    flex: 1;
+    padding-right: 20px;
+
+    img {
+      margin-bottom: 10px;
+    }
+  }
+
+  .services--hammer {
+    width: 80px;
+    margin-top: 75px;
+  }
+
+  .services--renovations {
+    margin-top: 66px;
+    flex: 1;
+  }
+}
+
+// Portfolio
+.portfolio {
 
 }
