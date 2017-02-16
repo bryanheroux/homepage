@@ -1,9 +1,10 @@
 @import 'reset';
 
+$orange: #FE972B;
 $defaultWidth: 800px !default;
 $headerHeight: 104px !default;
 $bodyFontStack: Georgia, seif;
-$headFontStack: DINAlternate-Bold, --apple-system, system, 'Roboto', 'Helvetica', sans-serif;
+$headFontStack: Abel, DINAlternate-Bold, --apple-system, system, 'Roboto', 'Helvetica', sans-serif;
 
 .clearfix:after {
      visibility: hidden;
@@ -26,6 +27,10 @@ html, body {
   font-size: 1.05em;
   color: rgba(0,0,0,.54);
   line-height: 1.4;
+}
+
+p {
+  margin-bottom: 15px;
 }
 
 h1,h2,h3 {
@@ -82,6 +87,11 @@ section {
       &:hover {
         text-decoration: underline;
       }
+    }
+    img {
+      margin-right: 5px;
+      width: 21px;
+      vertical-align: text-top;
     }
   }
 }
@@ -159,4 +169,58 @@ section {
 // Portfolio
 .portfolio {
 
+}
+
+// Quotes
+.quotes {
+
+  .quotes--grid {
+    padding: 20px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  blockquote {
+    display: block;
+    flex: 1 0 auto;
+    width: 50%;
+    padding: 20px;
+    p {
+      margin: 0;
+    }
+  }
+
+  small {
+    // float: right;
+    color: rgba(0,0,0,.24);
+  }
+
+  .quote--indicator {
+    float: left;
+    width: 22px;
+    height: 18px;
+    margin-right: 5px;
+    background: url('../images/quote.png');
+    background-repeat: no-repeat;
+  }
+
+}
+
+.button {
+  background: $orange;
+  box-shadow: 0 2px 0 0 #E78621;
+  border-radius: 100px;
+  padding: 10px 15px;
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+  font-size: 0.9em;
+  margin-right: 5px;
+
+  img {
+    vertical-align: text-top;
+  }
+
+  &:hover {
+    background: darken($orange, 15%);
+  }
 }
