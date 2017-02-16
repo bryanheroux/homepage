@@ -153,7 +153,7 @@ gulp.task('html', () => {
 });
 
 // Clean output directory
-gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git'], {dot: true}));
+gulp.task('clean', () => del(['.tmp', 'docs/*', '!docs/.git', '!docs/CNAME'], {dot: true}));
 
 // Watch files for changes & reload
 gulp.task('serve', ['scripts', 'styles'], () => {
