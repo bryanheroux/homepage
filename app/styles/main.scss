@@ -1,8 +1,13 @@
 @import 'reset';
+@import 'baguetteBox';
+
 
 $orange: #FE972B;
 $defaultWidth: 800px !default;
+$phoneSize: 650px !default;
+
 $headerHeight: 104px !default;
+$phoneHeaderHeight: 67px !default;
 $bodyFontStack: Georgia, seif;
 $headFontStack: Abel, DINAlternate-Bold, --apple-system, system, 'Roboto', 'Helvetica', sans-serif;
 
@@ -47,7 +52,8 @@ section {
 }
 
 .width-container {
-  width: $defaultWidth;
+  padding: 0 20px;
+  max-width: $defaultWidth;
   margin: 0 auto;
 }
 
@@ -63,16 +69,20 @@ section {
   border-bottom: 1px solid #979797;
   box-shadow: 0 1px 2px 0 rgba(213,213,213,0.50), 0 2px 4px 0 rgba(0,0,0,0.12);
 
+  .header--logo {
+    width: 388px;
+  }
+
   .header--inner {
     display: flex;
     margin: 0 auto;
-    width: $defaultWidth;
+    padding: 0 10px;
+    max-width: $defaultWidth - 20px;
 
     > div {
       flex: 1;
     }
   }
-
 
   .header--contact {
     text-align: right;
@@ -94,14 +104,35 @@ section {
       vertical-align: text-top;
     }
   }
+
+  @media (max-width: $phoneSize) {
+    .header--logo {
+      width: 194px;
+    }
+
+    .header--contact {
+      padding-top: 0px;
+      a {
+        font-size: 14px;
+      }
+      img {
+        width: 16px;
+      }
+    }
+  }
+
 }
 
 .container {
   background: url('../images/hero-image.png');
   height: 314px;
   background-size: cover;
-  background-position: top center;
+  background-position: bottom center;
   margin-top: $headerHeight;
+
+  @media (max-width: $phoneSize) {
+    margin-top: $phoneHeaderHeight;
+  }
 }
 
 // HERO IMAGE
@@ -145,10 +176,12 @@ section {
 
 .services--grid {
   display: flex;
+  flex-flow: row wrap;
 
   .services--custom-home {
-    flex: 1;
+    flex: 1 1 auto;
     padding-right: 20px;
+    width: 50%;
 
     img {
       margin-bottom: 10px;
@@ -157,19 +190,77 @@ section {
 
   .services--hammer {
     width: 80px;
-    margin-top: 75px;
+    // flex: 1 1 auto;
   }
 
   .services--renovations {
-    margin-top: 66px;
-    flex: 1;
+    flex: 1 1 auto;
+    width: calc(50% - 80px);
   }
+
+  @media (min-width: $phoneSize) {
+    .services--hammer {
+      margin-top: 75px;
+    }
+    .services--renovations {
+      margin-top: 66px;
+    }
+  }
+
+  @media (max-width: $phoneSize) {
+    .services--custom-home {
+      width: 100%;
+    }
+  }
+
 }
 
 // Portfolio
 .portfolio {
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .portfolio--grid {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .portfolio--grid-item {
+    flex: 1 1 auto;
+    max-width: 20%;
+    padding: 10px;
+    position: relative;
+
+    &.large {
+      max-width: 50%;
+    }
+
+  }
+
+  .label {
+    width: 124px;
+    height: 124px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 50%;
+
+    &.before {
+      background-image: url('../images/before-label@2x.png');
+    }
+
+    &.after {
+      background-image: url('../images/after-label@2x.png');
+    }
+  }
+
 }
+
 
 // Quotes
 .quotes {
@@ -191,7 +282,6 @@ section {
   }
 
   small {
-    // float: right;
     color: rgba(0,0,0,.24);
   }
 
@@ -204,6 +294,22 @@ section {
     background-repeat: no-repeat;
   }
 
+
+  @media (max-width: $phoneSize) {
+    blockquote {
+      width: 100%;
+    }
+  }
+
+}
+
+.footer {
+  padding-bottom: 40px;
+
+  a {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
 }
 
 .button {
