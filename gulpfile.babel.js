@@ -161,7 +161,6 @@ gulp.task('html', () => {
 
 // Scan your HTML for assets & optimize them
 gulp.task('devHtml', () => {
-  console.log('yey!');
   return gulp.src('app/**/*.html')
     // partials
     .pipe(htmlPartial({
