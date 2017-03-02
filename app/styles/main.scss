@@ -23,6 +23,10 @@ $headFontStack: 'Abel', 'Roboto', 'Helvetica', sans-serif;
 .clearfix { display: block; }
 /* close commented backslash hack */
 
+*, * > * {
+  box-sizing: border-box;
+}
+
 html, body {
   font-family: $bodyFontStack;
   margin: 0;
