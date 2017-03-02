@@ -1,6 +1,4 @@
 @import 'reset';
-@import 'baguetteBox';
-
 
 $orange: #FE972B;
 $defaultWidth: 800px !default;
@@ -9,7 +7,7 @@ $phoneSize: 650px !default;
 $headerHeight: 104px !default;
 $phoneHeaderHeight: 67px !default;
 $bodyFontStack: Georgia, seif;
-$headFontStack: Abel, DINAlternate-Bold, --apple-system, system, 'Roboto', 'Helvetica', sans-serif;
+$headFontStack: 'Abel', 'Roboto', 'Helvetica', sans-serif;
 
 .clearfix:after {
      visibility: hidden;
@@ -65,8 +63,8 @@ section {
   left: 0;
   right: 0;
   padding: 10px 0;
-  background: #FFFFFF;
-  border-bottom: 1px solid #979797;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
   box-shadow: 0 1px 2px 0 rgba(213,213,213,0.50), 0 2px 4px 0 rgba(0,0,0,0.12);
 
   .header--logo {
@@ -124,10 +122,18 @@ section {
 }
 
 .container {
-  background: url('../images/hero-image.png');
+  background: url('../images/hero-image-wood.png');
   height: 314px;
   background-size: cover;
   background-position: bottom center;
+  margin-top: $headerHeight;
+
+  @media (max-width: $phoneSize) {
+    margin-top: $phoneHeaderHeight;
+  }
+}
+
+.container--simple {
   margin-top: $headerHeight;
 
   @media (max-width: $phoneSize) {
@@ -239,28 +245,50 @@ section {
     }
 
   }
+}
 
-  .label {
-    width: 124px;
-    height: 124px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-size: 50%;
+.portfolio--label {
+  width: 124px;
+  height: 124px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 50%;
 
-    &.before {
-      background-image: url('../images/before-label@2x.png');
-    }
+  &.before {
+    background-image: url('../images/before-label@2x.png');
+  }
 
-    &.after {
-      background-image: url('../images/after-label@2x.png');
-    }
+  &.after {
+    background-image: url('../images/after-label@2x.png');
+  }
+}
+
+// Indivial pages portfolio
+.portfolio--standalone {
+  text-align: center;
+
+  h1 {
+    padding: 30px;
+    text-align: center;
+  }
+
+  > div {
+    display: inline-block;
+    // margin: 0 auto;
+    padding: 10px;
+    position: relative;
+  }
+
+  img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
   }
 
 }
-
 
 // Quotes
 .quotes {
