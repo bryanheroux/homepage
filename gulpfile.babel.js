@@ -136,6 +136,10 @@ gulp.task('html', () => {
       noAssets: true
     }))
 
+    .pipe(htmlPartial({
+      basePath: 'app/partials/'
+    }))
+
     // Minify any HTML
     .pipe($.if('*.html', $.htmlmin({
       removeComments: true,
@@ -151,9 +155,6 @@ gulp.task('html', () => {
     // Output files
     .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
 
-    .pipe(htmlPartial({
-      basePath: 'app/partials/'
-    }))
 
     .pipe(gulp.dest('docs'));
 });
