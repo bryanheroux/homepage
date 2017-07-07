@@ -239,13 +239,40 @@ section {
   }
 
   .portfolio--grid-item {
-    flex: 1 1 auto;
-    max-width: 20%;
+    flex: 1 0 auto;
+    max-width: 33.33%;
     padding: 10px;
     position: relative;
+    text-align: center;
+    border-radius: 3px;
+    transition: box-shadow .2s;
+    box-shadow: 0 1px 3px 0px #fff;
 
+    img {
+      display: block;
+      border-radius: 3px;
+    }
+    a:hover,
+    a {
+      color: inherit;
+    }
     &.large {
       max-width: 50%;
+    }
+
+    .link-button {
+      font-size: 12px;
+      margin: 0 auto;
+      text-align: center;
+      display: inline-block;
+      transition: color .2s;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 3px 0px rgba(0,0,0,.24);
+      .link-button {
+        color: #333;
+      }
     }
 
   }
@@ -290,6 +317,7 @@ section {
     display: inline-block;
     max-width: 100%;
     height: auto;
+    border-radius: 3px;
   }
 
 }
