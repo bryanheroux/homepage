@@ -230,6 +230,7 @@ section {
 
   img {
     max-width: 100%;
+    min-width: 100%;
     height: auto;
   }
 
@@ -241,6 +242,7 @@ section {
   .portfolio--grid-item {
     flex: 1 0 auto;
     max-width: 33.33%;
+    min-width: 25%;
     padding: 10px;
     position: relative;
     text-align: center;
